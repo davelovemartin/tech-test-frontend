@@ -9,6 +9,7 @@ export default [
   ...tseslint.configs.recommended,
   pluginReactConfig,
   {
-    ignores: ['jest.config.cjs'],
+    ignores: ['jest.config.cjs', 'build/**/*'],
   },
+  { settings: { react: { version: 'detect' } } },
 ];
