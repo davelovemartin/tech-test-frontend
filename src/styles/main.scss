@@ -1,0 +1,26 @@
+@import './_variables';
+@import './_mixins';
+
+* {
+  margin: 0;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: sans-serif;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+#root {
+  isolation: isolate;
+}

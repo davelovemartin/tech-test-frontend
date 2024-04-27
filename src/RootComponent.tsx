@@ -5,7 +5,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import RoleEligibilityPage from './pages/RoleEligibilityPage';
 import SkillsPage from './pages/SkillsPage';
 import { ROUTES } from './resources/routes-constants';
-import './styles/main.sass';
+import './styles/main.scss';
 
 const RootComponent: React.FC = () => {
   return (
