@@ -1,4 +1,6 @@
-// colors
+/***
+* Colors
+***/
 $black: #000000; // text
 $off-black: #1a1a1a;
 
@@ -10,12 +12,29 @@ $offish-grey: #f3f4f6; // active background
 $off-white: #f9fafb; // sidebar-background
 $white: #ffffff; // background
 
-$darkest-purple: #7c39ed; // logo background, checkbox,
-$dark-purple: #6c00ec; // active-nav text
+$blue: #3950ed;
+
+$purple-haze: #7c39ed; // logo background, checkbox,
+$aubergine: #6c00ec; // active-nav text
 $purple: #e0dafd; // nav-border
 $light-purple: #edeafe; // nav background
 
 $red: #e25253; // error text
 $light-red: #fee2e2; // error background
 
+$logo-background: $purple-haze;
+$logo-color: $off-white;
+
+$outline: $blue;
+
+$sidebar-background: $off-white;
+
+/***
+* Spacing
+***/
 $gap: 1rem;
+
+/***
+* Border radii
+***/
+$border-radius: 0.25em;

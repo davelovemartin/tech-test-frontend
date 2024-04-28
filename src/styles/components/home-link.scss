@@ -1,0 +1,30 @@
+@import '../variables';
+
+.home-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  line-height: 40px;
+  height: 40px;
+  display: block;
+  width: fit-content;
+
+  &:visited {
+    color: black;
+  }
+
+  :focus {
+    outline: 1px solid $outline;
+  }
+
+  span:first-of-type {
+    display: inline-block;
+    margin-inline-end: 0.5em;
+    background-color: $logo-background;
+    color: $logo-color;
+    text-align: center;
+    border-radius: $border-radius;
+    width: 40px;
+  }
+}
