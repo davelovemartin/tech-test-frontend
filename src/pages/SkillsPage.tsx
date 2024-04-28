@@ -2,7 +2,7 @@ import React from 'react';
 
 const SkillsPage = () => {
   return (
-    <div id="main" role="main">
+    <>
       <h1>Resource Name</h1>
       <nav className="secondary-navigation">
         <ul>
@@ -36,7 +36,7 @@ const SkillsPage = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 const RoleEligibilityPage = () => {
   return (
-    <div id="main" role="main">
+    <>
       <h1>Resource Name</h1>
       <nav className="secondary-navigation">
         <ul>
@@ -27,7 +27,7 @@ const RoleEligibilityPage = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </>
   );
 };
 

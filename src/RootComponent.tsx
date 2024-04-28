@@ -6,15 +6,18 @@ import RoleEligibilityPage from './pages/RoleEligibilityPage';
 import SkillsPage from './pages/SkillsPage';
 import { ROUTES } from './resources/routes-constants';
 import './styles/main.scss';
+import Layout from './components/Layout';
 
 const RootComponent: React.FC = () => {
   return (
     <Router>
       <Routes>
         <Route path="*" element={<NotFoundPage />} />
-        <Route path={ROUTES.HOMEPAGE_ROUTE} element={<HomePage />} />
-        <Route path={ROUTES.ROLE_ELIGIBILITY_ROUTE} element={<RoleEligibilityPage />} />
-        <Route path={ROUTES.SKILLS_ROUTE} element={<SkillsPage />} />
+        <Route element={<Layout />}>
+          <Route path={ROUTES.HOMEPAGE_ROUTE} element={<HomePage />} />
+          <Route path={ROUTES.ROLE_ELIGIBILITY_ROUTE} element={<RoleEligibilityPage />} />
+          <Route path={ROUTES.SKILLS_ROUTE} element={<SkillsPage />} />
+        </Route>
       </Routes>
     </Router>
   );

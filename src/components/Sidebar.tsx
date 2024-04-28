@@ -1,9 +1,10 @@
 import React from 'react';
+import HomeLink from './HomeLink';
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
-      <a href="/">VF Resourcing</a>
+      <HomeLink />
       <nav>
         <ul className="resourceList">
           <li className="resourceListItem">
