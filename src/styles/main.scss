@@ -26,3 +26,18 @@ button {
 #root {
   isolation: isolate;
 }
+
+#main {
+  padding: 1.5rem 1rem;
+}
+
+h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-block-end: 1rem;
+}
+
+p {
+  color: $paragraph;
+  max-width: $measure;
+}
