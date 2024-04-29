@@ -7,7 +7,7 @@ $off-black: #1a1a1a;
 $grey: #242424;
 $mid-grey: #767676; // checkbox-border
 $light-grey: #4c5564; //secondary-text
-$lightest-grey: #e5e7eb; // borders
+$smoke-grey: #e5e7eb; // borders
 $offish-grey: #f3f4f6; // active background
 $off-white: #f9fafb; // sidebar-background
 $white: #ffffff; // background
@@ -28,6 +28,8 @@ $logo-color: $off-white;
 $outline: $blue;
 
 $paragraph: $light-grey;
+
+$resource-avatar-background-color: $smoke-grey;
 
 $resource-list-item-background-color: $light-purple;
 $resource-list-item-border-color: $purple;

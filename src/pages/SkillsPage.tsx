@@ -1,9 +1,10 @@
 import React from 'react';
+import ResourceTitle from '~/components/ResourceTitle';
 
 const SkillsPage = () => {
   return (
     <>
-      <h1>Resource Name</h1>
+      <ResourceTitle resourceName="dave lovemartin" />
       <nav className="secondary-navigation">
         <ul>
           <li>

@@ -1,0 +1,10 @@
+.resource-title {
+  display: flex;
+  line-height: 3rem;
+  gap: $gap;
+
+  h1 {
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+}
