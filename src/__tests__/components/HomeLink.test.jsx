@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, waitFor } from '@testing-library/react';
 import HomeLink from '../../components/HomeLink';
-import { axe } from 'jest-axe';
+import { axe } from 'vitest-axe';
 import { MemoryRouter } from 'react-router-dom';
 
 test('it passes accessibility checks', async () => {

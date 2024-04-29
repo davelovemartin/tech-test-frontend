@@ -1,0 +1,21 @@
+@import '../variables';
+
+.resource-list-item {
+  a {
+    display: block;
+    width: calc(100% - 1rem);
+    padding: 0.25rem 0.5rem;
+    border-radius: $border-radius;
+    border: 1px solid $sidebar-background;
+    color: $resource-list-item-color;
+    transition: all ease-in 300ms;
+  }
+  a:hover,
+  a[aria-current='page'] {
+    background-color: $resource-list-item-background-color;
+    border: 1px solid $resource-list-item-border-color;
+  }
+  a[aria-current='page']:hover {
+    cursor: auto;
+  }
+}

@@ -3,4 +3,8 @@
   min-width: 18.75rem;
   height: calc(100vh - 2rem);
   background-color: $sidebar-background;
+
+  a + nav {
+    margin-block-start: 2rem;
+  }
 }
