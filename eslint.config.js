@@ -22,7 +22,7 @@ export default [
     files: ['src/__tests__/**/*'],
     languageOptions: {
       globals: {
-        ...globals.jest,
+        ...globals.vitest,
       },
     },
   },
