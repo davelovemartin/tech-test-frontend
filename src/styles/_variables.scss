@@ -6,7 +6,7 @@ $off-black: #1a1a1a;
 
 $grey: #242424;
 $mid-grey: #767676; // checkbox-border
-$light-grey: #4c5564; //secondary-text
+$light-grey: #525a69; //secondary-text
 $smoke-grey: #e5e7eb; // borders
 $offish-grey: #f3f4f6; // active background
 $off-white: #f9fafb; // sidebar-background
@@ -52,3 +52,8 @@ $measure: 60ch;
 * Border radii
 ***/
 $border-radius: 0.25em;
+
+/***
+* Font sizes
+***/
+$secondary-font-size: 0.875rem;
