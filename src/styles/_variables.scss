@@ -35,6 +35,11 @@ $resource-list-item-background-color: $light-purple;
 $resource-list-item-border-color: $purple;
 $resource-list-item-color: $black;
 
+$role-list-item-background-color: $white;
+$role-list-item-background-color-complete: $offish-grey;
+$role-list-item-color: $light-grey;
+$role-list-item-color-complete: $aubergine;
+
 $secondary-navigation-list-item-background-color-active: $light-purple;
 $secondary-navigation-list-item-background-color: $offish-grey;
 $secondary-navigation-list-item-color: $black;
@@ -47,6 +52,7 @@ $sidebar-background: $off-white;
 ***/
 $gap: 1rem;
 $measure: 60ch;
+$role-list-item-width: 31.25rem;
 
 /***
 * Border radii
@@ -57,3 +63,4 @@ $border-radius: 0.25em;
 * Font sizes
 ***/
 $secondary-font-size: 0.875rem;
+$small-font-size: 0.75rem;

@@ -1,1 +1,9 @@
 @import './_variables';
+
+@mixin list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.25rem;
+}

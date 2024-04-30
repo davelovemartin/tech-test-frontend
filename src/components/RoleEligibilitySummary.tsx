@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface RoleEligibilityStatusProps {
+interface RoleEligibilitySummaryProps {
   resourceName: string;
   roleEligibilityCount: number;
 }
 
-const RoleEligibilityStatus = (props: RoleEligibilityStatusProps) => {
+const RoleEligibilitySummary = (props: RoleEligibilitySummaryProps) => {
   const { resourceName, roleEligibilityCount } = props;
   return (
     <div className="role-eligibility-status">
@@ -14,4 +14,4 @@ const RoleEligibilityStatus = (props: RoleEligibilityStatusProps) => {
   );
 };
 
-export default RoleEligibilityStatus;
+export default RoleEligibilitySummary;
