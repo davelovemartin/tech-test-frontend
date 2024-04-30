@@ -1,6 +1,5 @@
 .resource-title {
-  display: flex;
-  gap: $gap;
+  @include flex;
   line-height: 3rem;
 
   h1 {

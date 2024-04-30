@@ -1,4 +1,5 @@
 import React from 'react';
+import AcquiredSkillsFilter from '~/components/AcquiredSkillsFilter';
 import ResourceContainer from '~/components/ResourceContainer';
 import ResourceTitle from '~/components/ResourceTitle';
 import SecondaryNavigation from '~/components/SecondaryNavigation';
@@ -9,10 +10,7 @@ const SkillsPage = () => {
       <ResourceTitle resourceName="dave lovemartin" />
       <ResourceContainer>
         <SecondaryNavigation />
-        <div className="acquired-skills-filter">
-          <input type="checkbox"></input>
-          <label>Only show acquired skills</label>
-        </div>
+        <AcquiredSkillsFilter handleChange={() => {}} />
         <ul>
           <li>
             <div>

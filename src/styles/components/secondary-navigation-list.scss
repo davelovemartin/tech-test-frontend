@@ -1,6 +1,5 @@
 .secondary-navigation-list {
-  display: flex;
+  @include flex(0.25rem);
   list-style: none;
   justify-content: flex-start;
-  gap: 0.25rem;
 }

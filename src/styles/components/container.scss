@@ -1,7 +1,6 @@
 .container {
-  display: flex;
+  @include flex;
   flex-wrap: wrap;
-  gap: $gap;
 
   & > :first-child {
     flex-grow: 1;
