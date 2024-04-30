@@ -40,7 +40,7 @@ export default defineConfig(({ mode }) => {
       outDir: 'build',
     },
     test: {
-      include: ['./src/__tests__/**/*.test.jsx'],
+      include: ['./src/__tests__/**/*.test.tsx'],
       environment: 'jsdom',
       globals: true,
       setupFiles: ['./src/setup.ts'],

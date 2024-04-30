@@ -1,9 +1,9 @@
-import { expect, afterEach } from 'vitest';
-import 'vitest-canvas-mock';
-import { cleanup } from '@testing-library/react';
-import * as matchers from '@testing-library/jest-dom/matchers';
-import * as axeMatchers from 'vitest-axe/matchers';
+/// <reference types="@testing-library/jest-dom" />
+/// <reference types="vitest/globals" />
 
+import * as matchers from 'vitest-axe/matchers';
+import { expect } from 'vitest';
 expect.extend(matchers);
-expect.extend(axeMatchers);
-afterEach(cleanup);
+
+import 'vitest-canvas-mock';
+import '@testing-library/jest-dom/vitest';
