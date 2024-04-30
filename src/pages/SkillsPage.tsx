@@ -1,21 +1,14 @@
 import React from 'react';
+import ResourceContainer from '~/components/ResourceContainer';
 import ResourceTitle from '~/components/ResourceTitle';
+import SecondaryNavigation from '~/components/SecondaryNavigation';
 
 const SkillsPage = () => {
   return (
     <>
       <ResourceTitle resourceName="dave lovemartin" />
-      <nav className="secondary-navigation">
-        <ul>
-          <li>
-            <a href="/role-eligibility">Role eligibility</a>
-          </li>
-          <li>
-            <a href="/skills">Skills</a>
-          </li>
-        </ul>
-      </nav>
-      <div className="skills">
+      <ResourceContainer>
+        <SecondaryNavigation />
         <div className="acquired-skills-filter">
           <input type="checkbox"></input>
           <label>Only show acquired skills</label>
@@ -36,7 +29,7 @@ const SkillsPage = () => {
             </div>
           </li>
         </ul>
-      </div>
+      </ResourceContainer>
     </>
   );
 };

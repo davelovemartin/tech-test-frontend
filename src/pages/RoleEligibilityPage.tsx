@@ -1,20 +1,14 @@
 import React from 'react';
+import ResourceContainer from '~/components/ResourceContainer';
+import ResourceTitle from '~/components/ResourceTitle';
+import SecondaryNavigation from '~/components/SecondaryNavigation';
 
 const RoleEligibilityPage = () => {
   return (
     <>
-      <h1>Resource Name</h1>
-      <nav className="secondary-navigation">
-        <ul>
-          <li>
-            <a href="/role-eligibility">Role eligibility</a>
-          </li>
-          <li>
-            <a href="/skills">Skills</a>
-          </li>
-        </ul>
-      </nav>
-      <div className="role-eligibility">
+      <ResourceTitle resourceName="dave lovemartin" />
+      <ResourceContainer>
+        <SecondaryNavigation />
         <div className="acquired-skills-filter">
           <p>role eligibility status</p>
         </div>
@@ -26,7 +20,7 @@ const RoleEligibilityPage = () => {
             </div>
           </li>
         </ul>
-      </div>
+      </ResourceContainer>
     </>
   );
 };
