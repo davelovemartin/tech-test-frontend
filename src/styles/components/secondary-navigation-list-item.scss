@@ -16,6 +16,6 @@
     color: $secondary-navigation-list-item-color-active;
   }
   a[aria-current='page']:hover {
-    cursor: auto;
+    cursor: default;
   }
 }
