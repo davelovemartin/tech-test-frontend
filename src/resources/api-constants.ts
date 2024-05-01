@@ -1,5 +1,4 @@
-const baseUrl = 'http://exampleurl'
-
-export const getData = (userId: number): string => {
-    return baseUrl + '/data/' + userId
-}
+export const API_ROUTES = {
+  RESOURCES: 'http://localhost:4000/resources',
+  SKILLS: 'http://localhost:4000/skills',
+};

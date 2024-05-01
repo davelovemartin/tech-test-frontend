@@ -1,12 +1,12 @@
 import React from 'react';
 import HomeLink from './HomeLink';
-import ResourceNavigation from './ResourceNavigation';
+import Resources from './Resources';
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <HomeLink />
-      <ResourceNavigation />
+      <Resources />
     </div>
   );
 };
