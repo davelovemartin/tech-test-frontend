@@ -1,0 +1,76 @@
+.skill-list-item {
+  @include card;
+  transition: $hover-transition;
+
+  &:hover {
+    background-color: $card-background-color-hover;
+  }
+
+  button {
+    padding: 0.875rem 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &[aria-pressed='true'] {
+      background-color: $card-background-color-complete;
+      transition: $hover-transition;
+
+      p,
+      div,
+      div div,
+      div div ul li {
+        color: $card-color-complete;
+      }
+    }
+
+    &[aria-pressed='true']:hover {
+      background-color: $card-background-color-complete-hover;
+    }
+
+    div p {
+      text-align: left;
+    }
+
+    div,
+    div p:first-of-type {
+      font-size: $secondary-font-size;
+    }
+
+    div div {
+      font-size: $small-font-size;
+      margin-block-start: 0.5rem;
+    }
+
+    div div ul {
+      list-style: none;
+      display: inline;
+    }
+
+    div div ul li {
+      display: inline;
+      margin-inline-end: 0.25rem;
+    }
+  }
+
+  &--error {
+    border: 2px solid $card-background-color-error;
+    transition: $hover-transition;
+
+    button {
+      background-color: $card-background-color-error;
+
+      p,
+      div,
+      div div,
+      div div ul li {
+        color: $card-color-error;
+      }
+    }
+
+    &:hover button {
+      background-color: $card-background-color-error-hover;
+    }
+  }
+}

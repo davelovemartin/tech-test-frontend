@@ -3,6 +3,8 @@ import AcquiredSkillsFilter from '~/components/AcquiredSkillsFilter';
 import ResourceContainer from '~/components/ResourceContainer';
 import ResourceTitle from '~/components/ResourceTitle';
 import SecondaryNavigation from '~/components/SecondaryNavigation';
+import SkillList from '~/components/SkillList';
+import SkillListItem from '~/components/SkillListItem';
 
 const SkillsPage = () => {
   return (
@@ -11,22 +13,13 @@ const SkillsPage = () => {
       <ResourceContainer>
         <SecondaryNavigation />
         <AcquiredSkillsFilter handleChange={() => {}} />
-        <ul>
-          <li>
-            <div>
-              <div className="skill">
-                <p>skill</p>
-                <p>
-                  Roles:{' '}
-                  <ul>
-                    <li>role</li>
-                  </ul>
-                </p>
-              </div>
-              <div className="skill-action">add</div>
-            </div>
-          </li>
-        </ul>
+        <SkillList>
+          <SkillListItem isAcquired={false} isFailed={false} isLoading={false} skillName="React" rolesApplicableToSkill={['Frontend']} />
+          <SkillListItem isAcquired={false} isFailed={false} isLoading={true} skillName="Preact" rolesApplicableToSkill={['Frontend']} />
+          <SkillListItem isAcquired={true} isFailed={false} isLoading={false} skillName="Python" rolesApplicableToSkill={['Backend']} />
+          <SkillListItem isAcquired={true} isFailed={false} isLoading={true} skillName="Git" rolesApplicableToSkill={['Backend', 'Frontend']} />
+          <SkillListItem isAcquired={false} isFailed={true} isLoading={false} skillName="Docker" rolesApplicableToSkill={['DevOps']} />
+        </SkillList>
       </ResourceContainer>
     </>
   );

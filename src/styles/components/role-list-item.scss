@@ -1,20 +1,16 @@
 .role-list-item {
+  @include card;
   padding: 0.875rem 1rem;
-  background-color: $role-list-item-background-color;
-  border-radius: $border-radius;
-  color: $role-list-item-color;
-  width: $role-list-item-width;
-  border: 2px solid $role-list-item-background-color-complete;
 
   p {
     line-height: 1;
   }
 
   &--complete {
-    background-color: $role-list-item-background-color-complete;
+    background-color: $card-background-color-complete;
 
     p {
-      color: $role-list-item-color-complete;
+      color: $card-color-complete;
     }
   }
 

@@ -11,3 +11,11 @@
   justify-content: flex-start;
   @include flex(0.25rem);
 }
+
+@mixin card {
+  background-color: $card-background-color;
+  border-radius: $border-radius;
+  color: $card-color;
+  width: $card-width;
+  border: 2px solid $card-background-color-complete;
+}

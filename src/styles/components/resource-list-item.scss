@@ -6,7 +6,7 @@
     border-radius: $border-radius;
     border: 1px solid $sidebar-background;
     color: $resource-list-item-color;
-    transition: all ease-in 300ms;
+    transition: $hover-transition;
   }
   a:hover,
   a[aria-current='page'] {

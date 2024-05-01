@@ -20,6 +20,7 @@ $purple: #e0dafd; // nav-border
 $light-purple: #edeafe; // nav background
 
 $red: #e25253; // error text
+$mid-red: #fdc9c9;
 $light-red: #fee2e2; // error background
 
 $logo-background: $purple-haze;
@@ -36,10 +37,15 @@ $resource-list-item-background-color: $light-purple;
 $resource-list-item-border-color: $purple;
 $resource-list-item-color: $black;
 
-$role-list-item-background-color: $white;
-$role-list-item-background-color-complete: $offish-grey;
-$role-list-item-color: $light-grey;
-$role-list-item-color-complete: $aubergine;
+$card-background-color: $white;
+$card-background-color-complete: $offish-grey;
+$card-background-color-complete-hover: $smoke-grey;
+$card-background-color-error: $light-red;
+$card-background-color-error-hover: $mid-red;
+$card-background-color-hover: $offish-grey;
+$card-color: $light-grey;
+$card-color-complete: $aubergine;
+$card-color-error: $red;
 
 $secondary-navigation-list-item-background-color-active: $light-purple;
 $secondary-navigation-list-item-background-color: $offish-grey;
@@ -53,7 +59,7 @@ $sidebar-background: $off-white;
 ***/
 $gap: 1rem;
 $measure: 60ch;
-$role-list-item-width: 31.25rem;
+$card-width: 31.25rem;
 
 /***
 * Border radii
@@ -65,3 +71,8 @@ $border-radius: 0.25em;
 ***/
 $secondary-font-size: 0.875rem;
 $small-font-size: 0.75rem;
+
+/***
+* Transitions
+***/
+$hover-transition: all ease-in 300ms;
