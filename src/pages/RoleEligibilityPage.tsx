@@ -10,18 +10,18 @@ import type { Resource } from '../components/Resources';
 import { z } from 'zod';
 import { countRequiredSkills, countRoleEligibility } from '~/utility/functions';
 
-const SkillAcquiredSchema = z.object({
+const SkillRequiredSchema = z.object({
   id: z.number(),
   name: z.string(),
   hasSkill: z.boolean(),
 });
 
-export type SkillAcquired = z.infer<typeof SkillAcquiredSchema>;
+export type SkillRequired = z.infer<typeof SkillRequiredSchema>;
 
 const RoleEligibilitySchema = z.object({
   id: z.number(),
   name: z.string(),
-  skillsRequired: z.array(SkillAcquiredSchema),
+  skillsRequired: z.array(SkillRequiredSchema),
 });
 
 export type RoleEligibility = z.infer<typeof RoleEligibilitySchema>;

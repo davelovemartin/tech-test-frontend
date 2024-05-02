@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SkillList = (props: { children: React.ReactElement | React.ReactElement[] }) => {
+const SkillList = (props: { children: (JSX.Element | undefined)[] }) => {
   return (
     <ul role="list" className="skill-list">
       {props.children}

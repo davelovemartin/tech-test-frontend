@@ -1,12 +1,12 @@
 import { useMatch } from 'react-router-dom';
-import type { SkillAcquired, RoleEligibility } from '../pages/RoleEligibilityPage';
-import type { Skill } from '../pages/SkillsPage';
+import type { RoleEligibility, SkillRequired } from '../pages/RoleEligibilityPage';
+import type { Skill, SkillAcquired } from '../pages/SkillsPage';
 
 export const appendIdToUrl = (resourceId: string, url: string) => {
   return url + `/${resourceId}`;
 };
 
-export const countRequiredSkills = (skills: SkillAcquired[]) => {
+export const countRequiredSkills = (skills: SkillRequired[]) => {
   return skills.filter((skill) => skill.hasSkill).length;
 };
 
@@ -32,4 +32,8 @@ export const sortSkillsByName = (skills: Skill[]) => {
 export const isRouteActive = (route: string) => {
   const match = useMatch(route);
   return match?.pathname === route;
+};
+
+export const isSkillAcquired = (id: number, skillsAcquired: SkillAcquired[]) => {
+  return !!skillsAcquired.find((item) => item.id === id);
 };

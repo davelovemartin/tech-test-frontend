@@ -27,14 +27,21 @@ export const skillsLoader = async ({ params }: LoaderFunctionArgs) => {
   if (!params.resourceId) {
     throw redirect(ROUTES.HOMEPAGE_ROUTE);
   }
-  const [resourceResponse, skillsResponse] = await Promise.all([fetch(appendIdToUrl(params.resourceId, API_ROUTES.RESOURCES)), fetch(API_ROUTES.SKILLS)]);
+  const resourceUrl = appendIdToUrl(params.resourceId, API_ROUTES.RESOURCES);
 
-  if (!resourceResponse.ok || !skillsResponse.ok) {
+  const [resourceResponse, skillsResponse, resourceSkillsAcquiredResponse] = await Promise.all([
+    fetch(resourceUrl),
+    fetch(API_ROUTES.SKILLS),
+    fetch(resourceUrl + '/skills'),
+  ]);
+
+  if (!resourceResponse.ok || !skillsResponse.ok || !resourceSkillsAcquiredResponse.ok) {
     throw new Error('Failed to fetch resource data');
   }
 
   const resource = await resourceResponse.json();
   const skills = await skillsResponse.json();
+  const resourceSkillsAcquired = await resourceSkillsAcquiredResponse.json();
 
-  return { resource, skills };
+  return { resource, skills, resourceSkillsAcquired };
 };

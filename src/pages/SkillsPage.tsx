@@ -8,7 +8,7 @@ import SkillListItem from '~/components/SkillListItem';
 import { z } from 'zod';
 import { useLoaderData, useNavigation, useSearchParams } from 'react-router-dom';
 import type { Resource } from '~/components/Resources';
-import { sortSkillsByName } from '~/utility/functions';
+import { isSkillAcquired, sortSkillsByName } from '~/utility/functions';
 
 const RoleSchema = z.object({
   id: z.number(),
@@ -25,14 +25,17 @@ const SkillSchema = z.object({
 
 export type Skill = z.infer<typeof SkillSchema>;
 
+export type SkillAcquired = Omit<Skill, 'requiredForRoles'>;
+
 interface LoaderData {
   resource: Resource;
   skills: Skill[];
+  resourceSkillsAcquired: SkillAcquired[];
 }
 
 const SkillsPage = () => {
   const [isFiltered, setIsFiltered] = useState(false);
-  const { resource, skills } = useLoaderData() as LoaderData;
+  const { resource, skills, resourceSkillsAcquired } = useLoaderData() as LoaderData;
   const navigation = useNavigation();
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -59,16 +62,18 @@ const SkillsPage = () => {
         <AcquiredSkillsFilter isChecked={isFiltered} handleChange={handleFilterChange} />
         <SkillList>
           {sortedSkills.map((skill) => {
-            return (
-              <SkillListItem
-                key={skill.id}
-                isAcquired={isFiltered}
-                isFailed={false}
-                isLoading={false}
-                skillName={skill.name}
-                rolesApplicableToSkill={skill.requiredForRoles.map((role) => role.name)}
-              />
-            );
+            const isAcquired = isSkillAcquired(skill.id, resourceSkillsAcquired);
+            if (!isFiltered || isAcquired)
+              return (
+                <SkillListItem
+                  key={skill.id}
+                  isAcquired={isAcquired}
+                  isFailed={false}
+                  isLoading={false}
+                  skillName={skill.name}
+                  rolesApplicableToSkill={skill.requiredForRoles.map((role) => role.name)}
+                />
+              );
           })}
         </SkillList>
         {/* <hr />
