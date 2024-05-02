@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AcquiredSkillsFilter from '~/components/AcquiredSkillsFilter';
 import ResourceContainer from '~/components/ResourceContainer';
 import ResourceTitle from '~/components/ResourceTitle';
@@ -31,9 +31,14 @@ interface LoaderData {
 }
 
 const SkillsPage = () => {
+  const [isFiltered, setIsFiltered] = useState(false);
   const { resource, skills } = useLoaderData() as LoaderData;
   const navigation = useNavigation();
   const isLoading = navigation.state === 'loading';
+
+  const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsFiltered(!!e.currentTarget.checked);
+  };
 
   const sortedSkills = sortSkillsByName(skills);
   return (
@@ -41,13 +46,13 @@ const SkillsPage = () => {
       <ResourceTitle isLoading={isLoading} resourceName={resource.name} />
       <ResourceContainer>
         <SecondaryNavigation />
-        <AcquiredSkillsFilter handleChange={() => {}} />
+        <AcquiredSkillsFilter handleChange={handleFilterChange} />
         <SkillList>
           {sortedSkills.map((skill) => {
             return (
               <SkillListItem
                 key={skill.id}
-                isAcquired={false}
+                isAcquired={isFiltered}
                 isFailed={false}
                 isLoading={false}
                 skillName={skill.name}
