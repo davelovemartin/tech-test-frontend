@@ -1,3 +1,5 @@
 .skill-list {
   @include list;
+  overflow-y: scroll;
+  height: calc(100vh - 11.5rem);
 }
