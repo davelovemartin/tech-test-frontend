@@ -13,7 +13,7 @@
     justify-content: space-between;
     align-items: center;
 
-    &:focus {
+    &:focus-visible {
       outline: $blue;
       outline-style: auto;
     }
