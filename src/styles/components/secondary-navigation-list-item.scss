@@ -11,7 +11,9 @@
     text-transform: capitalize;
   }
   a:hover,
-  a[aria-current='page'] {
+  a[aria-current='page'],
+  a.pending,
+  a.active {
     background-color: $secondary-navigation-list-item-background-color-active;
     color: $secondary-navigation-list-item-color-active;
   }

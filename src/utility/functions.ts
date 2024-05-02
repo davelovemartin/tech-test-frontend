@@ -1,3 +1,4 @@
+import { useMatch } from 'react-router-dom';
 import type { SkillAcquired, RoleEligibility } from '../pages/RoleEligibilityPage';
 import type { Skill } from '../pages/SkillsPage';
 
@@ -26,4 +27,9 @@ export const sortSkillsByName = (skills: Skill[]) => {
     if (nameA > nameB) return 1;
     return 0;
   });
+};
+
+export const isRouteActive = (route: string) => {
+  const match = useMatch(route);
+  return match?.pathname === route;
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 interface SecondaryNavigationListItemProps {
   isCurrent?: boolean;
@@ -11,9 +11,15 @@ const SecondaryNavigationListItem = (props: SecondaryNavigationListItemProps) =>
   const { isCurrent, linkName, url } = props;
   return (
     <li className="secondary-navigation-list-item">
-      <Link to={url} aria-current={isCurrent ? 'page' : 'false'}>
+      <NavLink
+        to={url}
+        aria-current={isCurrent ? 'page' : 'false'}
+        className={({ isActive, isPending }) => {
+          return isActive ? 'active' : isPending ? 'pending' : '';
+        }}
+      >
         {linkName}
-      </Link>
+      </NavLink>
     </li>
   );
 };
