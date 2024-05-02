@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AcquiredSkillsFilter from '~/components/AcquiredSkillsFilter';
 import ResourceContainer from '~/components/ResourceContainer';
 import ResourceTitle from '~/components/ResourceTitle';
@@ -6,7 +6,7 @@ import SecondaryNavigation from '~/components/SecondaryNavigation';
 import SkillList from '~/components/SkillList';
 import SkillListItem from '~/components/SkillListItem';
 import { z } from 'zod';
-import { useLoaderData, useNavigation } from 'react-router-dom';
+import { useLoaderData, useNavigation, useSearchParams } from 'react-router-dom';
 import type { Resource } from '~/components/Resources';
 import { sortSkillsByName } from '~/utility/functions';
 
@@ -34,10 +34,20 @@ const SkillsPage = () => {
   const [isFiltered, setIsFiltered] = useState(false);
   const { resource, skills } = useLoaderData() as LoaderData;
   const navigation = useNavigation();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const filter = searchParams.get('filter');
+  useEffect(() => {
+    if (filter === 'true') {
+      setIsFiltered(true);
+    }
+  }, [filter]);
+
   const isLoading = navigation.state === 'loading';
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsFiltered(!!e.currentTarget.checked);
+    setSearchParams({ filter: e.currentTarget.checked.toString() });
   };
 
   const sortedSkills = sortSkillsByName(skills);
@@ -46,7 +56,7 @@ const SkillsPage = () => {
       <ResourceTitle isLoading={isLoading} resourceName={resource.name} />
       <ResourceContainer>
         <SecondaryNavigation />
-        <AcquiredSkillsFilter handleChange={handleFilterChange} />
+        <AcquiredSkillsFilter isChecked={isFiltered} handleChange={handleFilterChange} />
         <SkillList>
           {sortedSkills.map((skill) => {
             return (
