@@ -3,7 +3,8 @@
   min-width: 18.75rem;
   background-color: $sidebar-background;
 
-  a + nav {
+  a + nav,
+  a + span span:first-of-type {
     margin-block-start: 2rem;
   }
 }

@@ -3,6 +3,7 @@ import ResourceNavigation from './ResourceNavigation';
 import axios from 'axios';
 import { z } from 'zod';
 import { API_ROUTES } from '~/resources/api-constants';
+import ResourceNavigationLoader from './ResourceNavigationLoader';
 
 const ResourceSchema = z.object({
   id: z.string(),
@@ -30,7 +31,7 @@ const Resources = () => {
 
   return (
     <>
-      {loading && <p>loading...</p>}
+      {loading && <ResourceNavigationLoader />}
       {error && <p>{`Error fetching resources: ${error}`}</p>}
       {resources && !loading && !error && <ResourceNavigation resources={resources} />}
     </>
