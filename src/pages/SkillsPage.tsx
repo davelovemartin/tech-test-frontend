@@ -6,7 +6,7 @@ import SecondaryNavigation from '~/components/SecondaryNavigation';
 import SkillList from '~/components/SkillList';
 import SkillListItem from '~/components/SkillListItem';
 import { z } from 'zod';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import type { Resource } from '~/components/Resources';
 import { sortSkillsByName } from '~/utility/functions';
 
@@ -32,10 +32,13 @@ interface LoaderData {
 
 const SkillsPage = () => {
   const { resource, skills } = useLoaderData() as LoaderData;
+  const navigation = useNavigation();
+  const isLoading = navigation.state === 'loading';
+
   const sortedSkills = sortSkillsByName(skills);
   return (
     <>
-      <ResourceTitle resourceName={resource.name} />
+      <ResourceTitle isLoading={isLoading} resourceName={resource.name} />
       <ResourceContainer>
         <SecondaryNavigation />
         <AcquiredSkillsFilter handleChange={() => {}} />

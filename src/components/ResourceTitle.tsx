@@ -1,12 +1,13 @@
 import React from 'react';
 import ResourceAvatar from './ResourceAvatar';
+import Skeleton from 'react-loading-skeleton';
 
-const ResourceTitle = (props: { resourceName: string }) => {
-  const { resourceName } = props;
+const ResourceTitle = (props: { isLoading?: boolean; resourceName: string }) => {
+  const { isLoading, resourceName } = props;
   return (
     <div className="resource-title">
-      <ResourceAvatar resourceName={resourceName} />
-      <h1>{resourceName}</h1>
+      <ResourceAvatar isLoading={isLoading} resourceName={resourceName} />
+      <h1>{isLoading ? <Skeleton /> : resourceName}</h1>
     </div>
   );
 };

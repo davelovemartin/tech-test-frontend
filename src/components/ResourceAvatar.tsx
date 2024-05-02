@@ -1,7 +1,9 @@
 import React from 'react';
+import Skeleton from 'react-loading-skeleton';
 
-const ResourceAvatar = (props: { resourceName: string }) => {
-  return <div className="resource-avatar">{initialsFromString(props.resourceName)}</div>;
+const ResourceAvatar = (props: { isLoading?: boolean; resourceName: string }) => {
+  const { isLoading, resourceName } = props;
+  return <div className="resource-avatar">{isLoading ? <Skeleton circle /> : initialsFromString(resourceName)}</div>;
 };
 
 function initialsFromString(resourceName: string) {

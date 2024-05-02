@@ -1,13 +1,15 @@
 import React from 'react';
+import Skeleton from 'react-loading-skeleton';
 
 interface RoleListItemProps {
+  isLoading?: boolean;
   roleName: string;
   requiredSkillsCount: number;
   totalRequiredSkillsCount: number;
 }
 
 const RoleListItem = (props: RoleListItemProps) => {
-  const { requiredSkillsCount, roleName, totalRequiredSkillsCount } = props;
+  const { isLoading, requiredSkillsCount, roleName, totalRequiredSkillsCount } = props;
 
   const isComplete = requiredSkillsCount === totalRequiredSkillsCount;
 
@@ -15,8 +17,8 @@ const RoleListItem = (props: RoleListItemProps) => {
 
   return (
     <li className={`role-list-item ${isComplete && 'role-list-item--complete'}`}>
-      <p>{roleName}</p>
-      <p>{roleEligibilityStatus}</p>
+      <p>{isLoading ? <Skeleton /> : roleName}</p>
+      <p>{isLoading ? <Skeleton /> : roleEligibilityStatus}</p>
     </li>
   );
 };

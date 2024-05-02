@@ -6,6 +6,7 @@ import RoleEligibilityPage from './pages/RoleEligibilityPage';
 import SkillsPage from './pages/SkillsPage';
 import { ROUTES } from './resources/routes-constants';
 import './styles/main.scss';
+import 'react-loading-skeleton/dist/skeleton.css';
 import Layout from './components/Layout';
 import { resourceLoader, skillsLoader } from './utility/loaders';
 

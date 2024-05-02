@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import ResourceContainer from '~/components/ResourceContainer';
 import ResourceTitle from '~/components/ResourceTitle';
 import RoleEligibilityStatus from '~/components/RoleEligibilitySummary';
@@ -33,19 +33,27 @@ interface LoaderData {
 
 const RoleEligibilityPage = () => {
   const { resource, roleEligibility } = useLoaderData() as LoaderData;
+  const navigation = useNavigation();
+  const isLoading = navigation.state === 'loading';
 
   return (
     <>
-      <ResourceTitle resourceName={resource.name} />
+      <ResourceTitle isLoading={isLoading} resourceName={resource.name} />
       <ResourceContainer>
         <SecondaryNavigation />
-        <RoleEligibilityStatus resourceName={resource.name} roleEligibilityCount={countRoleEligibility(roleEligibility)} />
+        <RoleEligibilityStatus isLoading={isLoading} resourceName={resource.name} roleEligibilityCount={countRoleEligibility(roleEligibility)} />
         <RoleList>
           {roleEligibility.map((role) => {
             const totalRequiredSkillsCount = role.skillsRequired.length;
             const requiredSkillsCount = countRequiredSkills(role.skillsRequired);
             return (
-              <RoleListItem key={role.id} requiredSkillsCount={requiredSkillsCount} roleName={role.name} totalRequiredSkillsCount={totalRequiredSkillsCount} />
+              <RoleListItem
+                key={role.id}
+                isLoading={isLoading}
+                requiredSkillsCount={requiredSkillsCount}
+                roleName={role.name}
+                totalRequiredSkillsCount={totalRequiredSkillsCount}
+              />
             );
           })}
         </RoleList>
