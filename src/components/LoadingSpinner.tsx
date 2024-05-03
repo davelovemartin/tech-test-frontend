@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LoadingSpinner = (props: { isError: boolean; isPressed: boolean }) => {
+const LoadingSpinner = (props: { isError?: boolean; isPressed?: boolean }) => {
   const { isError, isPressed } = props;
   const className = `loading-spinner ${isPressed ? 'loading-spinner-pressed' : ''} ${isError ? 'loading-spinner-error' : ''}`;
   return (
