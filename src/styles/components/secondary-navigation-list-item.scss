@@ -7,7 +7,7 @@
     border-radius: $border-radius;
     background-color: $secondary-navigation-list-item-background-color;
     color: $secondary-navigation-list-item-color;
-    transition: all ease-in 300ms;
+    transition: $hover-transition;
     text-transform: capitalize;
     text-decoration: none;
   }
