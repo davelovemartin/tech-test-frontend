@@ -17,8 +17,6 @@ const RoleSchema = z.object({
   name: z.string(),
 });
 
-// type Role = z.infer<typeof RoleSchema>;
-
 const SkillSchema = z.object({
   id: z.number(),
   name: z.string(),
