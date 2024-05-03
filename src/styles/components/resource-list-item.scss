@@ -7,6 +7,7 @@
     border: 1px solid $sidebar-background;
     color: $resource-list-item-color;
     transition: $hover-transition;
+    text-decoration: none;
   }
   a:hover,
   a[aria-current='page'] {

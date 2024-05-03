@@ -9,6 +9,7 @@
     color: $secondary-navigation-list-item-color;
     transition: all ease-in 300ms;
     text-transform: capitalize;
+    text-decoration: none;
   }
   a:hover,
   a[aria-current='page'],
