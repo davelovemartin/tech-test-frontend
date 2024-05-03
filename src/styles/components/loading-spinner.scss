@@ -1,0 +1,24 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  height: 1.25rem;
+  width: 1.25rem;
+
+  circle {
+    stroke: $card-color;
+    transform-origin: center;
+    animation: spin 1s linear infinite;
+  }
+
+  &.loading-spinner-pressed circle {
+    stroke: $card-color-complete;
+  }
+
+  &.loading-spinner-error circle {
+    stroke: $card-color-error;
+  }
+}

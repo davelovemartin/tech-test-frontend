@@ -1,4 +1,5 @@
 import React from 'react';
+import LoadingSpinner from './LoadingSpinner';
 
 interface SkillListItemProps {
   handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -12,7 +13,7 @@ interface SkillListItemProps {
 const SkillListItem = (props: SkillListItemProps) => {
   const { handleClick, isAcquired, isFailed, isLoading, rolesApplicableToSkill, skillName } = props;
   function getSkillListItemCallToAction() {
-    if (isLoading) return 'loading...';
+    if (isLoading) return <LoadingSpinner isPressed={isAcquired} isError={isFailed} />;
     if (isFailed) return 'Retry';
     return isAcquired ? 'Remove' : 'Add';
   }
