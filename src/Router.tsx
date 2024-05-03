@@ -9,6 +9,7 @@ import './styles/main.scss';
 import 'react-loading-skeleton/dist/skeleton.css';
 import Layout from './components/Layout';
 import { resourceLoader, skillsLoader } from './utility/loaders';
+import ErrorBoundary from './pages/ErrorBoundary';
 
 const Router: React.FC = () => {
   const router = createBrowserRouter([
@@ -23,11 +24,13 @@ const Router: React.FC = () => {
           path: ROUTES.ROLE_ELIGIBILITY_ROUTE_DYNAMIC,
           element: <RoleEligibilityPage />,
           loader: resourceLoader,
+          errorElement: <ErrorBoundary />,
         },
         {
           path: ROUTES.SKILLS_ROUTE_DYNAMIC,
           element: <SkillsPage />,
           loader: skillsLoader,
+          errorElement: <ErrorBoundary />,
         },
         {
           path: '*',

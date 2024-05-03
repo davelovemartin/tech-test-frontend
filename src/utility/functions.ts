@@ -1,4 +1,5 @@
-import { useMatch } from 'react-router-dom';
+import { useMatch, useNavigate } from 'react-router-dom';
+import { ROUTES } from '../resources/routes-constants';
 import type { RoleEligibility, SkillRequired } from '../pages/RoleEligibilityPage';
 import type { Skill, SkillAcquired } from '../pages/SkillsPage';
 
@@ -36,4 +37,9 @@ export const isRouteActive = (route: string) => {
 
 export const isSkillAcquired = (id: number, skillsAcquired: SkillAcquired[]) => {
   return !!skillsAcquired.find((item) => item.id === id);
+};
+
+export const redirectToHomePage = () => {
+  const navigate = useNavigate();
+  navigate(ROUTES.HOMEPAGE_ROUTE);
 };
