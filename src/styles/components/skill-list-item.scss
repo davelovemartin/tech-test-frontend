@@ -18,22 +18,6 @@
       outline-style: auto;
     }
 
-    &[aria-pressed='true'] {
-      background-color: $card-background-color-complete;
-      transition: $hover-transition;
-
-      p,
-      div,
-      div div,
-      div div ul li {
-        color: $card-color-complete;
-      }
-    }
-
-    &[aria-pressed='true']:hover {
-      background-color: $card-background-color-complete-hover;
-    }
-
     div p {
       text-align: left;
     }
@@ -57,14 +41,32 @@
       display: inline;
       margin-inline-end: 0.25rem;
     }
+
+    &[aria-pressed='true'] {
+      background-color: $card-background-color-complete;
+      transition: $hover-transition;
+
+      p,
+      div,
+      div div,
+      div div ul li {
+        color: $card-color-complete;
+      }
+    }
+
+    &[aria-pressed='true']:hover {
+      background-color: $card-background-color-complete-hover;
+    }
   }
 
   &--error {
     border: 2px solid $card-background-color-error;
     transition: $hover-transition;
 
-    button {
+    button,
+    button[aria-pressed='true'] {
       background-color: $card-background-color-error;
+      color: $card-color-error;
 
       p,
       div,
@@ -74,7 +76,8 @@
       }
     }
 
-    &:hover button {
+    &:hover button,
+    &:hover button[aria-pressed='true'] {
       background-color: $card-background-color-error-hover;
     }
   }

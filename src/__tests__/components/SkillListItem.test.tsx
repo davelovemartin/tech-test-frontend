@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import SkillListItem from '~/components/SkillListItem';
 
 const props = {
+  handleClick: () => {},
   skillName: 'JavaScript',
   rolesApplicableToSkill: ['Developer', 'Tester'],
   isFailed: false,

@@ -1,6 +1,7 @@
 import React from 'react';
 
 interface SkillListItemProps {
+  handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   isAcquired: boolean;
   isFailed: boolean;
   isLoading: boolean;
@@ -9,7 +10,7 @@ interface SkillListItemProps {
 }
 
 const SkillListItem = (props: SkillListItemProps) => {
-  const { isAcquired, isFailed, isLoading, rolesApplicableToSkill, skillName } = props;
+  const { handleClick, isAcquired, isFailed, isLoading, rolesApplicableToSkill, skillName } = props;
   function getSkillListItemCallToAction() {
     if (isLoading) return 'loading...';
     if (isFailed) return 'Retry';
@@ -17,7 +18,7 @@ const SkillListItem = (props: SkillListItemProps) => {
   }
   return (
     <li className={`skill-list-item${isFailed ? ' skill-list-item--error' : ''}`}>
-      <button aria-pressed={isAcquired}>
+      <button aria-pressed={isAcquired} onClick={handleClick}>
         <div>
           <p>{skillName}</p>
           <div>
